@@ -4,7 +4,7 @@ middlewares and implementations.
 """
 from typing import Optional
 
-from tinydb import Storage
+from utinydb import Storage
 
 
 class Middleware:
@@ -70,7 +70,7 @@ class Middleware:
         remain as transparent as possible.
         """
 
-        return getattr(self.__dict__['storage'], name)
+        return getattr(self.__dict__["storage"], name)
 
 
 class CachingMiddleware(Middleware):

@@ -1,6 +1,6 @@
 import pytest
 
-from tinydb.utils import LRUCache, freeze, FrozenDict
+from utinydb.utils import LRUCache, freeze, FrozenDict
 
 
 def test_lru_cache():
@@ -12,7 +12,7 @@ def test_lru_cache():
     cache["d"] = 4  # move oldest item out of lru queue
 
     try:
-        _ = cache['f']
+        _ = cache["f"]
     except KeyError:
         pass
 
@@ -47,7 +47,7 @@ def test_lru_cache_delete():
     del cache["a"]
 
     try:
-        del cache['f']
+        del cache["f"]
     except KeyError:
         pass
 
@@ -83,26 +83,26 @@ def test_lru_cache_iteration_works():
     cache = LRUCache()
     count = 0
     for _ in cache:
-        assert False, 'there should be no elements in the cache'
+        assert False, "there should be no elements in the cache"
 
     assert count == 0
 
 
 def test_freeze():
-    frozen = freeze([0, 1, 2, {'a': [1, 2, 3]}, {1, 2}])
+    frozen = freeze([0, 1, 2, {"a": [1, 2, 3]}, {1, 2}])
     assert isinstance(frozen, tuple)
     assert isinstance(frozen[3], FrozenDict)
-    assert isinstance(frozen[3]['a'], tuple)
+    assert isinstance(frozen[3]["a"], tuple)
     assert isinstance(frozen[4], frozenset)
 
     with pytest.raises(TypeError):
         frozen[0] = 10
 
     with pytest.raises(TypeError):
-        frozen[3]['a'] = 10
+        frozen[3]["a"] = 10
 
     with pytest.raises(TypeError):
-        frozen[3].pop('a')
+        frozen[3].pop("a")
 
     with pytest.raises(TypeError):
-        frozen[3].update({'a': 9})
+        frozen[3].update({"a": 9})

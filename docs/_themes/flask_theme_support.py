@@ -1,7 +1,19 @@
 # flasky extensions.  flasky pygments style based on tango style
 from pygments.style import Style
-from pygments.token import Keyword, Name, Comment, String, Error, \
-    Number, Operator, Generic, Whitespace, Punctuation, Other, Literal
+from pygments.token import (
+    Keyword,
+    Name,
+    Comment,
+    String,
+    Error,
+    Number,
+    Operator,
+    Generic,
+    Whitespace,
+    Punctuation,
+    Other,
+    Literal,
+)
 
 
 class FlaskyStyle(Style):
@@ -14,10 +26,8 @@ class FlaskyStyle(Style):
         Whitespace: "underline #f8f8f8",  # class: 'w'
         Error: "#a40000 border:#ef2929",  # class: 'err'
         Other: "#000000",  # class 'x'
-
         Comment: "italic #8f5902",  # class: 'c'
         Comment.Preproc: "noitalic",  # class: 'cp'
-
         Keyword: "bold #004461",  # class: 'k'
         Keyword.Constant: "bold #004461",  # class: 'kc'
         Keyword.Declaration: "bold #004461",  # class: 'kd'
@@ -25,12 +35,9 @@ class FlaskyStyle(Style):
         Keyword.Pseudo: "bold #004461",  # class: 'kp'
         Keyword.Reserved: "bold #004461",  # class: 'kr'
         Keyword.Type: "bold #004461",  # class: 'kt'
-
         Operator: "#582800",  # class: 'o'
         Operator.Word: "bold #004461",  # class: 'ow' - like keywords
-
         Punctuation: "bold #000000",  # class: 'p'
-
         # because special names such as Name.Class, Name.Function, etc.
         # are not recognized as such later in the parsing, we choose them
         # to look the same as ordinary variables.
@@ -53,12 +60,9 @@ class FlaskyStyle(Style):
         Name.Variable.Class: "#000000",  # class: 'vc' - to be revised
         Name.Variable.Global: "#000000",  # class: 'vg' - to be revised
         Name.Variable.Instance: "#000000",  # class: 'vi' - to be revised
-
         Number: "#990000",  # class: 'm'
-
         Literal: "#000000",  # class: 'l'
         Literal.Date: "#000000",  # class: 'ld'
-
         String: "#4e9a06",  # class: 's'
         String.Backtick: "#4e9a06",  # class: 'sb'
         String.Char: "#4e9a06",  # class: 'sc'
@@ -71,7 +75,6 @@ class FlaskyStyle(Style):
         String.Regex: "#4e9a06",  # class: 'sr'
         String.Single: "#4e9a06",  # class: 's1'
         String.Symbol: "#4e9a06",  # class: 'ss'
-
         Generic: "#000000",  # class: 'g'
         Generic.Deleted: "#a40000",  # class: 'gd'
         Generic.Emph: "italic #000000",  # class: 'ge'

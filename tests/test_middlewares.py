@@ -1,13 +1,17 @@
 import os
 
-from tinydb import TinyDB
-from tinydb.middlewares import CachingMiddleware
-from tinydb.storages import MemoryStorage, JSONStorage
+from utinydb import TinyDB
+from utinydb.middlewares import CachingMiddleware
+from utinydb.storages import MemoryStorage, JSONStorage
 
-doc = {'none': [None, None], 'int': 42, 'float': 3.1415899999999999,
-       'list': ['LITE', 'RES_ACID', 'SUS_DEXT'],
-       'dict': {'hp': 13, 'sp': 5},
-       'bool': [True, False, True, False]}
+doc = {
+    "none": [None, None],
+    "int": 42,
+    "float": 3.1415899999999999,
+    "list": ["LITE", "RES_ACID", "SUS_DEXT"],
+    "dict": {"hp": 13, "sp": 5},
+    "bool": [True, False, True, False],
+}
 
 
 def test_caching(storage):
@@ -86,10 +90,10 @@ def test_nested():
 
 
 def test_caching_json_write(tmpdir):
-    path = str(tmpdir.join('test.db'))
+    path = str(tmpdir.join("test.db"))
 
     with TinyDB(path, storage=CachingMiddleware(JSONStorage)) as db:
-        db.insert({'key': 'value'})
+        db.insert({"key": "value"})
 
     # Verify database filesize
     statinfo = os.stat(path)
@@ -102,4 +106,4 @@ def test_caching_json_write(tmpdir):
 
     # Reopen database
     with TinyDB(path, storage=CachingMiddleware(JSONStorage)) as db:
-        assert db.all() == [{'key': 'value'}]
+        assert db.all() == [{"key": "value"}]

@@ -7,8 +7,8 @@ license = "MIT"
 
 readme = "README.rst"
 
-homepage = "https://github.com/msiemens/tinydb"
-documentation = "https://tinydb.readthedocs.org/"
+homepage = "https://github.com/"
+documentation = "https://utinydb.readthedocs.org/"
 
 keywords = ["database", "nosql"]
 
@@ -33,7 +33,7 @@ classifiers = [
 ]
 
 packages = [
-    { include = "tinydb" }
+    { include = "utinydb" }
 ]
 
 [tool.poetry.urls]

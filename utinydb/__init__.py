@@ -1,16 +1,16 @@
 """
-TinyDB is a tiny, document oriented database optimized for your happiness :)
+uTinyDB is a tiny, document oriented database optimized for your happiness :)
 
-TinyDB stores differrent types of Python data types using a configurable
+uTinyDB stores differrent types of Python data types using a configurable
 storage mechanism. It comes with a syntax for querying data and storing
 data in multiple tables.
 
 .. codeauthor:: Markus Siemens <markus@m-siemens.de>
-
+.. codeauthor:: José Ricardo Borba <jrborba@betterdays.app>
 Usage example:
 
->>> from tinydb import TinyDB, where
->>> from tinydb.storages import MemoryStorage
+>>> from utinydb import uTinyDB, where
+>>> from utinydb.storages import MemoryStorage
 >>> db = TinyDB(storage=MemoryStorage)
 >>> db.insert({'data': 5})  # Insert into '_default' table
 >>> db.search(where('data') == 5)
@@ -29,4 +29,4 @@ from .storages import Storage, JSONStorage
 from .database import TinyDB
 from .version import __version__
 
-__all__ = ('TinyDB', 'Storage', 'JSONStorage', 'Query', 'where')
+__all__ = ("uTinyDB", "Storage", "JSONStorage", "Query", "where")

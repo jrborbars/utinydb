@@ -1,6 +1,4 @@
-.. image:: https://raw.githubusercontent.com/msiemens/tinydb/master/artwork/logo.png
-    :scale: 100%
-    :height: 150px
+# uTinyDB
 
 |Build Status| |Coverage| |Version|
 
@@ -9,58 +7,43 @@ Quick Links
 
 - `Example Code`_
 - `Supported Python Versions`_
-- `Documentation <http://tinydb.readthedocs.org/>`_
-- `Changelog <https://tinydb.readthedocs.io/en/latest/changelog.html>`_
-- `Extensions <https://tinydb.readthedocs.io/en/latest/extensions.html>`_
-- `Contributing`_
+- `Documentation <http://utinydb.readthedocs.org/>`_
 
 Introduction
 ************
 
-TinyDB is a lightweight document oriented database optimized for your happiness :)
+uTinyDB is a VERY lightweight document oriented database optimized for embedded systems.
 It's written in pure Python and has no external dependencies. The target are
-small apps that would be blown away by a SQL-DB or an external database server.
+REALLY small apps that need a database BUT does not need all the clutter that come with.
 
-TinyDB is:
+uTinyDB is:
 
-- **tiny:** The current source code has 1800 lines of code (with about 40%
-  documentation) and 1600 lines tests.
+- **tiny:** The current source code has XXXX lines of code.
 
 - **document oriented:** Like MongoDB_, you can store any document
   (represented as ``dict``) in TinyDB.
 
-- **optimized for your happiness:** TinyDB is designed to be simple and
+- **optimized for embedded systems:** TinyDB is designed to be simple and
   fun to use by providing a simple and clean API.
 
 - **written in pure Python:** TinyDB neither needs an external server (as
   e.g. `PyMongo <https://api.mongodb.org/python/current/>`_) nor any dependencies
   from PyPI.
 
-- **works on Python 3.6+ and PyPy3:** TinyDB works on all modern versions of Python
-  and PyPy.
-
-- **powerfully extensible:** You can easily extend TinyDB by writing new
-  storages or modify the behaviour of storages with Middlewares.
-
-- **100% test coverage:** No explanation needed.
-
-To dive straight into all the details, head over to the `TinyDB docs
-<https://tinydb.readthedocs.io/>`_. You can also discuss everything related
-to TinyDB like general development, extensions or showcase your TinyDB-based
-projects on the `discussion forum <http://forum.m-siemens.de/.>`_.
-
-Supported Python Versions
-*************************
-
-TinyDB has been tested with Python 3.6 - 3.10 and PyPy3.
+- **works on uPython 1.12+:** TinyDB works on all modern versions of uPython.
+''
+To dive straight into all the details, head over to the `uTinyDB docs
+<https://utinydb.readthedocs.io/>`_. You can also discuss everything related
+to uTinyDB like general development, extensions or showcase your uTinyDB-based
+projects.
 
 Example Code
 ************
 
 .. code-block:: python
 
-    >>> from tinydb import TinyDB, Query
-    >>> db = TinyDB('/path/to/db.json')
+    >>> from utinydb import TinyDB, Query
+    >>> db = uTinyDB('/path/to/db.json')
     >>> db.insert({'int': 1, 'char': 'a'})
     >>> db.insert({'int': 1, 'char': 'b'})
 
@@ -99,25 +82,16 @@ Tables
     >>> table.all()
     [{'value': True}]
 
-Using Middlewares
-=================
-
-.. code-block:: python
-
-    >>> from tinydb.storages import JSONStorage
-    >>> from tinydb.middlewares import CachingMiddleware
-    >>> db = TinyDB('/path/to/db.json', storage=CachingMiddleware(JSONStorage))
-
 
 Contributing
 ************
 
 Whether reporting bugs, discussing improvements and new ideas or writing
-extensions: Contributions to TinyDB are welcome! Here's how to get started:
+extensions: Contributions to uTinyDB are welcome! Here's how to get started:
 
 1. Check for open issues or open a fresh issue to start a discussion around
    a feature idea or a bug
-2. Fork `the repository <https://github.com/msiemens/tinydb/>`_ on Github,
+2. Fork `the repository <https://github.com/jrborbars/utinydb/>`_ on Github,
    create a new branch off the `master` branch and start making your changes
    (known as `GitHub Flow <https://guides.github.com/introduction/flow/index.html>`_)
 3. Write a test which shows that the bug was fixed or that the feature works
