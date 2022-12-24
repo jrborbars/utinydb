@@ -1,4 +1,6 @@
-# uTinyDB
+uTinyDB
+*******
+WIP! But it works, even using lots of memory.
 
 |Build Status| |Coverage| |Version|
 
